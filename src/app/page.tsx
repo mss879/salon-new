@@ -4,6 +4,7 @@ import BeautyServicesTab from "@/components/BeautyServicesTab";
 import AboutUs from "@/components/AboutUs";
 import PricingHighlights from "@/components/PricingHighlights";
 import Testimonials from "@/components/Testimonials";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <AboutUs />
         <PricingHighlights />
         <Testimonials />
+        <CTA />
       </main>
     </div>
   );

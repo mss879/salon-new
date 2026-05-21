@@ -4,13 +4,13 @@ import Link from "next/link";
 
 export default function PricingHighlights() {
   const prices = [
-    { name: "Signature HydraFacial (45 min)", price: "Rs 30000/-" },
-    { name: "Volume / Mink Lash Set", price: "Rs 15000/-" },
-    { name: "Clean-up Facial (45 min)", price: "Rs 12000/-" },
-    { name: "Shiroabhyanga Hair Oil Treatment", price: "Rs 7000/-" },
-    { name: "Acrylic on Natural Nails", price: "Rs 6000/-" },
-    { name: "Express Pedicure", price: "Rs 5000/-" },
-    { name: "Express Manicure", price: "Rs 4300/-" },
+    { name: "Esthemax Full Body Scrub and Pack", price: "Rs. 15,000" },
+    { name: "Deep Tissue Massage", price: "Rs. 12,000" },
+    { name: "Signature Bridal Package (1 Function)", price: "Rs. 55,000" },
+    { name: "Korean Glass Skin Hydra Facial", price: "Rs. 8,500" },
+    { name: "Luxury Pedicure", price: "Rs. 4,000" },
+    { name: "Butterfly Cut", price: "Rs. 3,500" },
+    { name: "Full Face Threading", price: "Rs. 1,500" },
   ];
 
   return (
@@ -60,7 +60,7 @@ export default function PricingHighlights() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="mt-20"
         >
-          <Link href="/price-list" className="group inline-flex flex-col relative overflow-hidden">
+          <Link href="/services" className="group inline-flex flex-col relative overflow-hidden">
             <span className="uppercase text-[0.7rem] font-bold tracking-[0.2em] pb-2 text-white relative z-10 transition-transform duration-300 group-hover:-translate-y-full">
               VIEW FULL PRICE LIST
             </span>

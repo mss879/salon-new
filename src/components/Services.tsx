@@ -6,32 +6,32 @@ import Image from "next/image";
 export default function Services() {
   const services = [
     {
-      title: "Nail Enhancements",
-      desc: "From classic manicures and lotus pedicures to bespoke nail artistry and acrylic enhancements, we perfect every detail.",
+      title: "Nails & Lashes",
+      desc: "Indulgent classic manicures, luxury hot-towel pedicures, and masterfully mapped lash extensions.",
       icon: "/icons/icon_nails_v2.png",
       delay: 0,
-      link: "/services/nails"
+      link: "/services#manicure-pedicure"
     },
     {
-      title: "Ayurvedic Therapies",
-      desc: "Discover holistic wellness through our signature Shiroabhyanga rituals, deep tissue massages, and restorative care.",
+      title: "Massage & Wellness",
+      desc: "Restore physical equilibrium through signature full body massages, back recovery, and warm herbal oil scalp therapy.",
       icon: "/icons/icon_ayurveda_v2.png",
       delay: 0.5,
-      link: "/services/ayurveda"
+      link: "/services#massage-services-ladies-only"
     },
     {
       title: "Hair Artistry",
-      desc: "Transform your look with expert coloring, ammonia-free treatments, keratin, and precision styling by our master stylists.",
+      desc: "Transform your look with precision cuts, layers, butterfly cuts, and beautiful custom styles.",
       icon: "/icons/icon_hair_v2.png",
       delay: 1,
-      link: "/services/hair"
+      link: "/services#haircuts"
     },
     {
       title: "Facial & Skincare",
-      desc: "Rejuvenate your skin with signature HydraFacials, precise threading, and bespoke cosmetic embroidery.",
+      desc: "Rejuvenate your skin with signature HydraFacials, cleanups, and precise threading services.",
       icon: "/icons/icon_facial_v2.png",
       delay: 1.5,
-      link: "/services/skincare"
+      link: "/services#facials"
     }
   ];
 
@@ -63,7 +63,7 @@ export default function Services() {
               Dive into our world of care at our renowned beauty salon. Our expert team is dedicated to providing exceptional, personalized treatments using the latest innovations in beauty services.
             </p>
             <div>
-              <Link href="/price-list" className="group inline-flex flex-col relative overflow-hidden">
+              <Link href="/services" className="group inline-flex flex-col relative overflow-hidden">
                 <span className="uppercase text-[0.7rem] font-bold tracking-[0.2em] pb-2 text-white relative z-10 transition-transform duration-300 group-hover:-translate-y-full">
                   VIEW PRICE LIST
                 </span>

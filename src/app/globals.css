@@ -12,8 +12,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
-  --font-sans: var(--font-geist-sans);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-basic);
+  --font-serif: var(--font-basic);
 }
 
 body {

@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="w-full flex justify-center pt-4 pb-2 px-6 sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/5">
       <div className="w-full max-w-7xl flex items-center justify-between pb-2 relative">
-        <div className="flex items-center gap-8 text-sm font-semibold tracking-widest text-primary/60">
+        <div className="flex items-center gap-8 text-sm font-semibold tracking-widest text-primary">
           {links.map((link) => {
             // Check if the current path matches the link
             // For the home page, it must be an exact match to avoid matching all routes
@@ -44,7 +44,7 @@ export default function Navbar() {
           <Link href="/">
             <Image 
               src="https://cdn.prod.website-files.com/66c429ccb7d3d92aa0a8475f/66c43855fea65f29af704f8b_main-logo.svg" 
-              alt="Solano Logo" 
+              alt="Lavendra Beauty Lounge Logo" 
               width={140} 
               height={40} 
               priority
