@@ -4,11 +4,11 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
-export default function HeroAnimation() {
+export default function HeroAnimation({ startAnimation = true }: { startAnimation?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !startAnimation) return;
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.2 });
@@ -146,7 +146,7 @@ export default function HeroAnimation() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [startAnimation]);
 
   // Tool positions in a circle (6 items, evenly spaced)
   const radius = 40; // slightly tighter radius

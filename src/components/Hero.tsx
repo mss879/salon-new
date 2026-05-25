@@ -2,7 +2,7 @@ import Link from "next/link";
 import DarkVeil from "./DarkVeil";
 import HeroAnimation from "./HeroAnimation";
 
-export default function Hero() {
+export default function Hero({ startAnimation = true }: { startAnimation?: boolean }) {
   return (
     <section className="w-full relative flex justify-center pt-24 pb-40 sm:pb-44 lg:pb-48 px-6 overflow-hidden">
       {/* Background Animation */}
@@ -49,7 +49,7 @@ export default function Hero() {
 
         {/* Right Side: GSAP Animation */}
         <div className="w-full lg:pl-12 xl:pl-24">
-          <HeroAnimation />
+          <HeroAnimation startAnimation={startAnimation} />
         </div>
 
       </div>
