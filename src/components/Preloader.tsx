@@ -197,7 +197,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                 x: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
                 opacity: { duration: 0.4 }
               }}
-              style={{ y: 70 }}
+              style={{ y: 70, rotate: -18 }}
             >
               {/* Part A: Bottom-Left Handle & Top-Right Blade */}
               <motion.g
