@@ -60,12 +60,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <div className="flex flex-col items-center gap-8 sm:gap-10 z-10 w-full max-w-md px-6">
             
             {/* Premium Slanted Scissors Motion Animation */}
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative w-36 h-36 flex items-center justify-center mb-2 text-primary"
-            >
+            <div className="relative w-36 h-36 flex items-center justify-center mb-2 text-primary">
               {/* Outer soft glowing ring */}
               <div className="absolute inset-0 rounded-full border border-primary/10 animate-ping opacity-25" style={{ animationDuration: '3.5s' }} />
               
@@ -135,7 +130,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                 <circle cx="50" cy="50" r="1.5" fill="currentColor" />
                 <circle cx="48.8" cy="48.8" r="0.8" fill="white" className="opacity-80" />
               </svg>
-            </motion.div>
+            </div>
 
             {/* Showcase words explaining what the business does */}
             <div className="h-10 flex items-center justify-center">
