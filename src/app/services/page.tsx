@@ -232,18 +232,9 @@ const SERVICE_CATALOG: ServiceCategory[] = [
 
 
 
-interface SelectedService {
-  name: string;
-  price: string;
-  categoryTitle: string;
-  duration?: string;
-}
-
 export default function ServicesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedServices, setSelectedServices] = useState<SelectedService[]>([]);
-  const [isBreakdownOpen, setIsBreakdownOpen] = useState(false);
 
   const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -299,68 +290,6 @@ export default function ServicesPage() {
     })
     .filter((cat): cat is NonNullable<typeof cat> => cat !== null);
   }, [searchQuery, selectedCategory]);
-
-
-
-  // Helper values for selected services calculation
-  const parsePrice = (priceStr: string): number => {
-    const clean = priceStr.replace(/[^0-9]/g, "");
-    return clean ? parseInt(clean, 10) : 0;
-  };
-
-  const parseDuration = (durationStr?: string): number => {
-    if (!durationStr) return 0;
-    if (durationStr.includes("hr")) {
-      const hours = durationStr.match(/(\d+)\s*hr/);
-      const mins = durationStr.match(/(\d+)\s*m/);
-      const hVal = hours ? parseInt(hours[1], 10) * 60 : 0;
-      const mVal = mins ? parseInt(mins[1], 10) : 0;
-      return hVal + mVal;
-    }
-    const mins = durationStr.match(/(\d+)/);
-    return mins ? parseInt(mins[1], 10) : 0;
-  };
-
-  const totalCalculatedPrice = useMemo(() => {
-    return selectedServices.reduce((sum, item) => sum + parsePrice(item.price), 0);
-  }, [selectedServices]);
-
-  const totalCalculatedDuration = useMemo(() => {
-    return selectedServices.reduce((sum, item) => sum + parseDuration(item.duration), 0);
-  }, [selectedServices]);
-
-  const hasVariablePricing = useMemo(() => {
-    return selectedServices.some(
-      (item) => item.price.toLowerCase().includes("consultation") || item.price.toLowerCase().includes("from")
-    );
-  }, [selectedServices]);
-
-  const hasCustomDuration = useMemo(() => {
-    return selectedServices.some((item) => item.duration?.toLowerCase().includes("tailored"));
-  }, [selectedServices]);
-
-  const toggleServiceSelection = (item: { name: string; price: string; duration?: string }, categoryTitle: string) => {
-    const index = selectedServices.findIndex((s) => s.name === item.name && s.categoryTitle === categoryTitle);
-    if (index >= 0) {
-      setSelectedServices(selectedServices.filter((_, i) => i !== index));
-    } else {
-      setSelectedServices([...selectedServices, { ...item, categoryTitle }]);
-    }
-  };
-
-  const isServiceSelected = (name: string, categoryTitle: string) => {
-    return selectedServices.some((s) => s.name === name && s.categoryTitle === categoryTitle);
-  };
-
-  const formattedDuration = (mins: number) => {
-    if (mins === 0) return "";
-    const hrs = Math.floor(mins / 60);
-    const remainingMins = mins % 60;
-    if (hrs > 0) {
-      return `${hrs} hr${hrs > 1 ? "s" : ""}${remainingMins > 0 ? ` ${remainingMins} min${remainingMins > 1 ? "s" : ""}` : ""}`;
-    }
-    return `${mins} min${mins > 1 ? "s" : ""}`;
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -483,19 +412,12 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => {
-                      if (!isServiceSelected("Korean Glass Skin Hydra Facial", "Hydra Facial Treatments")) {
-                        toggleServiceSelection(
-                          { name: "Korean Glass Skin Hydra Facial", price: "Rs. 8,500" },
-                          "Hydra Facial Treatments"
-                        );
-                      }
-                    }}
-                    className="flex-1 bg-white text-primary text-[0.65rem] font-bold uppercase tracking-widest py-3.5 px-4 rounded-lg hover:bg-[#e6c8a2] transition-colors"
+                  <Link 
+                    href="/appointment"
+                    className="flex-1 bg-white text-primary text-center text-[0.65rem] font-bold uppercase tracking-widest py-3.5 px-4 rounded-lg hover:bg-[#e6c8a2] transition-colors"
                   >
-                    {isServiceSelected("Korean Glass Skin Hydra Facial", "Hydra Facial Treatments") ? "Added to Rituals" : "Add to Package"}
-                  </button>
+                    Book Appointment
+                  </Link>
                   <Link 
                     href="/appointment"
                     className="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg hover:border-white transition-colors"
@@ -708,32 +630,15 @@ export default function ServicesPage() {
                                   </h3>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
                                     {sub.services.map((item, itemIdx) => {
-                                      const selected = isServiceSelected(item.name, category.title);
                                       return (
                                         <div 
                                           key={itemIdx} 
-                                          onClick={() => toggleServiceSelection(item, category.title)}
-                                          className={`flex flex-col gap-2 group/item cursor-pointer p-4 rounded-2xl border transition-all duration-300 ${
-                                            selected 
-                                              ? "bg-white border-primary/20 shadow-md" 
-                                              : "border-transparent hover:bg-white hover:shadow-sm"
-                                          }`}
+                                          className="flex flex-col gap-2 group/item p-4 rounded-2xl border border-transparent hover:bg-white hover:shadow-sm transition-all duration-300"
                                         >
                                           <div className="flex items-baseline justify-between gap-4 relative">
                                             
-                                            {/* Selection check box indicators */}
+                                            {/* Selection check box indicators removed */}
                                             <div className="flex items-center gap-3 w-full overflow-hidden">
-                                              <div className={`w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all ${
-                                                selected 
-                                                  ? "bg-primary border-primary" 
-                                                  : "border-foreground/20 group-hover/item:border-primary/50"
-                                              }`}>
-                                                {selected && (
-                                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                                  </svg>
-                                                )}
-                                              </div>
                                               <h4 className="font-serif text-base font-light text-foreground group-hover/item:text-primary transition-colors truncate">
                                                 {item.name}
                                               </h4>
@@ -745,7 +650,7 @@ export default function ServicesPage() {
                                             </span>
                                           </div>
                                           {item.experience && (
-                                            <p className="text-[0.7rem] text-foreground/40 font-light pl-8 line-clamp-2">
+                                            <p className="text-[0.7rem] text-foreground/40 font-light line-clamp-2">
                                               {item.experience}
                                             </p>
                                           )}
@@ -761,31 +666,13 @@ export default function ServicesPage() {
                           // Standard Grid Cards with advanced list-line hover animations
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 mt-8 relative z-10">
                             {category.services?.map((item, itemIdx) => {
-                              const selected = isServiceSelected(item.name, category.title);
                               return (
                                 <div 
                                   key={itemIdx} 
-                                  onClick={() => toggleServiceSelection(item, category.title)}
-                                  className={`flex flex-col justify-center py-4.5 px-5 rounded-2xl border transition-all duration-300 group/item cursor-pointer ${
-                                    selected 
-                                      ? "bg-white border-primary/20 shadow-lg shadow-primary/[0.02]" 
-                                      : "border-transparent hover:bg-white hover:border-foreground/10 hover:shadow-xl hover:shadow-foreground/[0.02]"
-                                  }`}
+                                  className="flex flex-col justify-center py-4.5 px-5 rounded-2xl border border-transparent hover:bg-white hover:border-foreground/10 hover:shadow-xl hover:shadow-foreground/[0.02] transition-all duration-300 group/item"
                                 >
                                   <div className="flex items-baseline justify-between gap-4">
                                     <div className="flex items-center gap-3 overflow-hidden">
-                                      {/* Advanced inline check button */}
-                                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all ${
-                                        selected 
-                                          ? "bg-primary border-primary" 
-                                          : "border-foreground/20 group-hover/item:border-primary/50"
-                                      }`}>
-                                        {selected && (
-                                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                          </svg>
-                                        )}
-                                      </div>
                                       <h4 className="font-serif text-base font-light text-foreground group-hover/item:text-primary transition-colors truncate">
                                         {item.name}
                                       </h4>
@@ -798,14 +685,14 @@ export default function ServicesPage() {
                                   </div>
                                   
                                   {item.experience && (
-                                    <p className="text-[0.7rem] text-foreground/45 font-light mt-1.5 pl-8 line-clamp-1">
+                                    <p className="text-[0.7rem] text-foreground/45 font-light mt-1.5 line-clamp-1">
                                       {item.experience}
                                     </p>
                                   )}
 
                                   {/* Duration & Tag detail bar */}
                                   {(item.duration || item.tag || item.isPopular) && (
-                                    <div className="flex flex-wrap items-center gap-3 pl-8 mt-2">
+                                    <div className="flex flex-wrap items-center gap-3 mt-2">
                                       {item.duration && (
                                         <div className="flex items-center gap-1.5 text-foreground/40 font-mono text-[0.55rem] uppercase tracking-widest group-hover/item:text-primary/70 transition-colors">
                                           <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -842,104 +729,7 @@ export default function ServicesPage() {
 
         </section>
 
-        {/* =========================================
-            INTERACTIVE BESPOKE RITUAL PLANNER (THE WOW DRAWER)
-            ========================================= */}
-        <AnimatePresence>
-          {selectedServices.length > 0 && (
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 280, damping: 28 }}
-              className="fixed bottom-6 left-6 right-6 lg:left-auto lg:right-12 z-50 lg:w-[480px] bg-[#2d2a26] text-white rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#9b3030]/20 via-transparent to-transparent pointer-events-none" />
-              <div className="relative p-6 flex flex-col z-10">
-                
-                {/* Header info */}
-                <div className="flex justify-between items-center pb-4 mb-4 border-b border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#9b3030] flex items-center justify-center font-mono text-sm font-bold shadow-md shadow-[#9b3030]/30 animate-pulse">
-                      {selectedServices.length}
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-lg text-white">Your Bespoke Ritual</h4>
-                      <span className="text-[0.6rem] font-mono text-white/50 uppercase tracking-widest">Lavendra Signature Package</span>
-                    </div>
-                  </div>
-                  <button 
-                    onClick={() => setSelectedServices([])}
-                    className="text-white/45 hover:text-white text-[0.65rem] font-bold uppercase tracking-wider"
-                  >
-                    Clear All
-                  </button>
-                </div>
-
-                {/* Dynamically calculated items */}
-                <div className="flex flex-col gap-3.5 mb-6">
-                  <div className="flex justify-between items-end">
-                    <span className="text-[0.65rem] font-mono text-white/50 tracking-wider uppercase">EST. RITUAL TIME</span>
-                    <span className="font-mono text-sm font-medium text-white flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#e6c8a2]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {formattedDuration(totalCalculatedDuration) || "TBD"}
-                      {hasCustomDuration && <span className="text-[0.6rem] text-amber-400 font-light">&bull; Custom Incl.</span>}
-                    </span>
-                  </div>
-                  
-                  <div className="flex justify-between items-baseline">
-                    <span className="text-[0.65rem] font-mono text-white/50 tracking-wider uppercase">TOTAL INVESTMENT</span>
-                    <div className="text-right">
-                      <span className="font-mono text-2xl font-semibold text-[#e6c8a2] drop-shadow-md">
-                        Rs. {totalCalculatedPrice.toLocaleString()}
-                      </span>
-                      {hasVariablePricing && (
-                        <span className="block text-[0.55rem] text-amber-400 font-light italic">
-                          *Subject to consultation changes
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Expandable Selected List Details Accordion */}
-                <div className="mb-6 max-h-36 overflow-y-auto scrollbar-thin pr-1 border-t border-white/5 pt-3">
-                  <div className="flex flex-col gap-2">
-                    {selectedServices.map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-center text-xs text-white/80 group">
-                        <span className="truncate max-w-[280px] font-serif font-light">{item.name}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-white/50 text-[0.65rem]">{item.price}</span>
-                          <button
-                            onClick={() => toggleServiceSelection(item, item.categoryTitle)}
-                            className="text-white/40 hover:text-[#9b3030] transition-colors p-1"
-                          >
-                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Primary Booking Button with direct selection flow */}
-                <Link
-                  href={`/appointment?services=${encodeURIComponent(
-                    selectedServices.map((s) => s.name).join(", ")
-                  )}`}
-                  className="w-full bg-[#9b3030] text-center text-white text-xs font-bold uppercase tracking-widest py-4 rounded-xl shadow-lg hover:bg-primary-hover shadow-[#9b3030]/20 hover:-translate-y-0.5 active:translate-y-0 active:shadow-none transition-all duration-300"
-                >
-                  Book Bespoke Ritual Suite
-                </Link>
-
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Bottom planner drawer removed */}
 
         {/* =========================================
             LUXURY FOOTER CTA
