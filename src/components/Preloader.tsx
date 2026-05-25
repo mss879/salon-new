@@ -138,7 +138,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             </motion.div>
 
             {/* Showcase words explaining what the business does */}
-            <div className="h-8 flex items-center justify-center">
+            <div className="h-10 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWordIndex}
@@ -146,7 +146,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                   animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                   exit={{ y: -15, opacity: 0, filter: "blur(4px)" }}
                   transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="font-sans text-[0.75rem] sm:text-xs font-bold uppercase tracking-[0.35em] text-primary"
+                  className="font-sans text-[1.1rem] sm:text-[1.3rem] font-bold uppercase tracking-[0.3em] text-primary text-center"
                 >
                   {words[currentWordIndex]}
                 </motion.span>
