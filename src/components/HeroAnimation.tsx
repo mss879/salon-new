@@ -6,11 +6,9 @@ import gsap from "gsap";
 
 export default function HeroAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const hasPlayed = useRef(false);
 
   useEffect(() => {
-    if (hasPlayed.current || !containerRef.current) return;
-    hasPlayed.current = true;
+    if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.2 });
@@ -179,7 +177,7 @@ export default function HeroAnimation() {
           <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none" />
           <div className="center-text flex flex-col items-center justify-center z-10 w-full h-full" style={{ opacity: 0 }}>
             <Image 
-              src="https://cdn.prod.website-files.com/66c429ccb7d3d92aa0a8475f/66c43855fea65f29af704f8b_main-logo.svg"
+              src="/logo.png"
               alt="Solano Logo"
               width={100}
               height={30}

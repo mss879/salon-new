@@ -15,8 +15,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full flex justify-center pt-4 pb-2 px-6 sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/5">
-      <div className="w-full max-w-7xl flex items-center justify-between pb-2 relative">
+    <nav className="w-full flex justify-center pt-6 pb-6 px-6 sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/5">
+      <div className="w-full max-w-7xl flex items-center justify-between relative">
         <div className="flex items-center gap-8 text-sm font-semibold tracking-widest text-primary">
           {links.map((link) => {
             // Check if the current path matches the link
@@ -40,10 +40,10 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center px-10 border-x border-[#d1a3a3]/40 h-10">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center px-10 border-x border-[#d1a3a3]/40 h-10">
           <Link href="/">
             <Image 
-              src="https://cdn.prod.website-files.com/66c429ccb7d3d92aa0a8475f/66c43855fea65f29af704f8b_main-logo.svg" 
+              src="/logo.png" 
               alt="Lavendra Beauty Lounge Logo" 
               width={140} 
               height={40} 
