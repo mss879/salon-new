@@ -11,8 +11,97 @@ const basicFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Lavendra Beauty Lounge - Discover your beauty potential",
-  description: "Bespoke beauty transformations and luxurious care. Experience the premier salon experience in Colombo 6, Sri Lanka.",
+  title: {
+    default: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
+    template: "%s | Lavendra Beauty Lounge",
+  },
+  description: "Experience bespoke beauty transformations and luxurious organic care at Lavendra Beauty Lounge, Colombo's ISO 9001:2015 certified luxury unisex salon.",
+  metadataBase: new URL("https://lavendrabeautylounge.com"),
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
+    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
+    url: "https://lavendrabeautylounge.com",
+    siteName: "Lavendra Beauty Lounge",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 800,
+        height: 600,
+        alt: "Lavendra Beauty Lounge Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
+    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
+    images: ["/logo.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Lavendra Beauty Lounge",
+  "image": "https://lavendrabeautylounge.com/logo.webp",
+  "@id": "https://lavendrabeautylounge.com/#salon",
+  "url": "https://lavendrabeautylounge.com",
+  "telephone": "+94775201201",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 59/1, Keppetipola Mawatha",
+    "addressLocality": "Kolonnawa",
+    "addressRegion": "Western Province",
+    "postalCode": "10600",
+    "addressCountry": "LK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 6.927079,
+    "longitude": 79.883908
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/lavendrabeautylounge",
+    "https://www.instagram.com/lavendrabeautylounge"
+  ]
 };
 
 export default function RootLayout({
@@ -25,6 +114,12 @@ export default function RootLayout({
       lang="en"
       className={`${basicFont.variable} h-full overflow-x-clip antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-clip w-full">
         <Navbar />
         {children}

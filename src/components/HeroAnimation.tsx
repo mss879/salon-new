@@ -9,12 +9,12 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
 
   // List of the 6 core beauty tools
   const tools = [
-    { name: "Hair", img: "/images/tools/hairdryer-red.png" },
-    { name: "Cut", img: "/images/tools/scissors-red.png" },
-    { name: "Makeup", img: "/images/tools/brush-red.png" },
-    { name: "Nails", img: "/images/tools/nailpolish-red.png" },
-    { name: "Style", img: "/images/tools/comb-red.png" },
-    { name: "Beauty", img: "/images/tools/mirror-red.png" },
+    { name: "Hair", img: "/images/tools/hairdryer-red.webp" },
+    { name: "Cut", img: "/images/tools/scissors-red.webp" },
+    { name: "Makeup", img: "/images/tools/brush-red.webp" },
+    { name: "Nails", img: "/images/tools/nailpolish-red.webp" },
+    { name: "Style", img: "/images/tools/comb-red.webp" },
+    { name: "Beauty", img: "/images/tools/mirror-red.webp" },
   ];
 
   // Duplicate for seamless infinite marquee loop on mobile
@@ -229,7 +229,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
             <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none" />
             <div className="center-text flex flex-col items-center justify-center z-10 w-full h-full" style={{ opacity: 0 }}>
               <Image 
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Solano Logo"
                 width={100}
                 height={30}
@@ -253,7 +253,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
               <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-              <Image src="/images/tools/hairdryer-red.png" alt="Hair Dryer" width={100} height={100} className={imgClass} />
+              <Image src="/images/tools/hairdryer-red.webp" alt="Hair Dryer" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-               <Image src="/images/tools/scissors-red.png" alt="Scissors" width={100} height={100} className={imgClass} />
+               <Image src="/images/tools/scissors-red.webp" alt="Scissors" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
               <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-              <Image src="/images/tools/brush-red.png" alt="Makeup Brush" width={100} height={100} className={imgClass} />
+              <Image src="/images/tools/brush-red.webp" alt="Makeup Brush" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>
@@ -310,7 +310,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-               <Image src="/images/tools/nailpolish-red.png" alt="Nail Polish" width={100} height={100} className={imgClass} />
+               <Image src="/images/tools/nailpolish-red.webp" alt="Nail Polish" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>
@@ -329,7 +329,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-               <Image src="/images/tools/comb-red.png" alt="Comb" width={100} height={100} className={imgClass} />
+               <Image src="/images/tools/comb-red.webp" alt="Comb" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>
@@ -348,7 +348,7 @@ export default function HeroAnimation({ startAnimation = true }: { startAnimatio
           <div className="flex flex-col items-center">
             <div className={toolClass}>
                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
-               <Image src="/images/tools/mirror-red.png" alt="Hand Mirror" width={100} height={100} className={imgClass} />
+               <Image src="/images/tools/mirror-red.webp" alt="Hand Mirror" width={100} height={100} className={imgClass} />
             </div>
           </div>
         </div>

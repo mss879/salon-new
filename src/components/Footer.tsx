@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-col">
           <Link href="/" className="mb-6 inline-block">
             <Image 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="Lavendra Beauty Lounge Logo" 
               width={155} 
               height={45} 

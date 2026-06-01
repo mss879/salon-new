@@ -76,7 +76,7 @@ export default function Navbar() {
         <div className="absolute z-50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center px-4 md:px-10 border-x border-[#d1a3a3]/40 h-8 md:h-10">
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Lavendra Beauty Lounge Logo"
               width={140}
               height={40}

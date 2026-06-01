@@ -14,17 +14,17 @@ export default function BeautyServicesTab() {
     {
       title: "Our Heritage",
       desc: "Located in the suburbs of Colombo 6, we are the city's most prestigious one-stop unisex salon. With years of expertise, we represent a commitment to true beauty transformations and a warm, welcoming signature experience.",
-      img: "/images/heritage_pillar.png",
+      img: "/images/heritage_pillar.webp",
     },
     {
       title: "ISO 9001:2015",
       desc: "We are honored to be one of the very few salons in Sri Lanka to achieve the ISO 9001:2015 certification. From continuous improvement to risk-based thinking, we're raising the standard of professional salon care.",
-      img: "/images/certification_pillar.png",
+      img: "/images/certification_pillar.webp",
     },
     {
       title: "Master Craftsmanship",
       desc: "Technique can be taught, but soul is rare. Our team combines time-tested skills with soulful service. Trained in the latest techniques and cutting-edge tools, we deliver an experience unlike any other.",
-      img: "/images/craftsmanship_pillar.png",
+      img: "/images/craftsmanship_pillar.webp",
     }
   ];
 

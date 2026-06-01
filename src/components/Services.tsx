@@ -8,28 +8,28 @@ export default function Services() {
     {
       title: "Nails & Lashes",
       desc: "Indulgent classic manicures, luxury hot-towel pedicures, and masterfully mapped lash extensions.",
-      icon: "/icons/icon_nails_v2.png",
+      icon: "/icons/icon_nails_v2.webp",
       delay: 0,
       link: "/services#manicure-pedicure"
     },
     {
       title: "Massage & Wellness",
       desc: "Restore physical equilibrium through signature full body massages, back recovery, and warm herbal oil scalp therapy.",
-      icon: "/icons/icon_ayurveda_v2.png",
+      icon: "/icons/icon_ayurveda_v2.webp",
       delay: 0.5,
       link: "/services#massage-services-ladies-only"
     },
     {
       title: "Hair Artistry",
       desc: "Transform your look with precision cuts, layers, butterfly cuts, and beautiful custom styles.",
-      icon: "/icons/icon_hair_v2.png",
+      icon: "/icons/icon_hair_v2.webp",
       delay: 1,
       link: "/services#haircuts"
     },
     {
       title: "Facial & Skincare",
       desc: "Rejuvenate your skin with signature HydraFacials, cleanups, and precise threading services.",
-      icon: "/icons/icon_facial_v2.png",
+      icon: "/icons/icon_facial_v2.webp",
       delay: 1.5,
       link: "/services#facials"
     }
