@@ -120,7 +120,6 @@ export default function Footer() {
             <Link 
               href="https://www.arcai.agency" 
               target="_blank" 
-              rel="noopener"
               title="ARC AI Agency - Web Design, Development, and AI Solutions"
               className="flex items-center ml-1"
             >
