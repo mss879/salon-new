@@ -36,8 +36,8 @@ export default function Services() {
   ];
 
   return (
-    <section className="w-full bg-primary flex justify-center py-32 px-6 text-white border-b border-white/10">
-      <div className="w-full max-w-7xl flex flex-col gap-24">
+    <section className="w-full bg-primary flex justify-center py-20 sm:py-32 px-4 sm:px-6 text-white border-b border-white/10">
+      <div className="w-full max-w-7xl flex flex-col gap-16 sm:gap-24">
         
         {/* Top Content */}
         <motion.div 
@@ -45,21 +45,21 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24"
+          className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 text-center lg:text-left"
         >
           {/* Left Title */}
-          <div className="flex-1">
-            <div className="uppercase tracking-[0.2em] text-[0.7rem] font-bold mb-6 text-white/70">
+          <div className="flex-1 flex flex-col items-center lg:items-start">
+            <div className="uppercase tracking-[0.2em] text-[0.7rem] font-bold mb-4 sm:mb-6 text-white/70">
               OUR EXPERTISE
             </div>
-            <h2 className="font-serif text-5xl lg:text-6xl leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.1] tracking-tight">
               Signature Treatments<br />Curated for You
             </h2>
           </div>
           
           {/* Right Description */}
-          <div className="flex-1 flex flex-col justify-end lg:max-w-xl">
-            <p className="text-white/80 text-[1.1rem] font-light leading-relaxed mb-8">
+          <div className="flex-1 flex flex-col justify-end items-center lg:items-end lg:max-w-xl">
+            <p className="text-white/80 text-sm sm:text-[1.1rem] font-light leading-relaxed mb-6 sm:mb-8 pr-0">
               Dive into our world of care at our renowned beauty salon. Our expert team is dedicated to providing exceptional, personalized treatments using the latest innovations in beauty services.
             </p>
             <div>
@@ -86,8 +86,8 @@ export default function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
             >
-              <Link href={service.link} className="flex flex-col group items-start relative h-full">
-                <div className="mb-8 w-16 h-16 rounded-full border border-white/20 overflow-hidden relative transition-all duration-500 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+              <Link href={service.link} className="flex flex-col group items-center md:items-start text-center md:text-left relative h-full">
+                <div className="mb-6 sm:mb-8 w-16 h-16 rounded-full border border-white/20 overflow-hidden relative transition-all duration-500 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                   <Image 
                     src={service.icon} 
                     alt={service.title} 
@@ -95,8 +95,8 @@ export default function Services() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
                   />
                 </div>
-                <h4 className="font-serif text-3xl mb-4 group-hover:text-white/90 transition-colors">{service.title}</h4>
-                <p className="text-white/70 font-light leading-relaxed mb-8 flex-1 pr-4">
+                <h4 className="font-serif text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:text-white/90 transition-colors">{service.title}</h4>
+                <p className="text-white/70 font-light leading-relaxed text-sm sm:text-base mb-6 sm:mb-8 flex-1 pr-0 md:pr-4">
                   {service.desc}
                 </p>
                 <div className="uppercase text-[0.7rem] font-bold tracking-widest text-white/50 transition-all duration-300 group-hover:text-white flex items-center gap-2 mt-auto">

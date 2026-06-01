@@ -29,10 +29,7 @@ export default function BeautyServicesTab() {
   ];
 
   useEffect(() => {
-    // Only activate scroll spy observer on desktop (lg viewports)
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    if (!mediaQuery.matches) return;
-
     const elements = document.querySelectorAll(".scroll-section-card");
     const observerOptions = {
       root: null,
@@ -53,22 +50,37 @@ export default function BeautyServicesTab() {
       });
     };
 
-    const observer = new IntersectionObserver(callback, observerOptions);
-    observerRef.current = observer;
-    elements.forEach((el) => observer.observe(el));
+    let observer: IntersectionObserver | null = null;
+
+    const setupObserver = () => {
+      if (mediaQuery.matches) {
+        if (!observer) {
+          observer = new IntersectionObserver(callback, observerOptions);
+          elements.forEach((el) => observer!.observe(el));
+          observerRef.current = observer;
+        }
+      } else {
+        if (observer) {
+          observer.disconnect();
+          observer = null;
+          observerRef.current = null;
+        }
+      }
+    };
+
+    // Initial setup
+    setupObserver();
 
     // Handle dynamic viewport resize
-    const listener = (e: MediaQueryListEvent) => {
-      if (!e.matches) {
-        observer.disconnect();
-      } else {
-        elements.forEach((el) => observer.observe(el));
-      }
+    const listener = () => {
+      setupObserver();
     };
     mediaQuery.addEventListener("change", listener);
 
     return () => {
-      observer.disconnect();
+      if (observer) {
+        observer.disconnect();
+      }
       mediaQuery.removeEventListener("change", listener);
     };
   }, []);
@@ -89,11 +101,11 @@ export default function BeautyServicesTab() {
   };
 
   return (
-    <section className="w-full bg-background flex justify-center py-20 lg:py-32 px-6 overflow-clip border-b border-foreground/5">
+    <section className="w-full bg-background flex justify-center py-20 lg:py-32 px-6 overflow-clip lg:overflow-visible border-b border-foreground/5">
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
         
         {/* Left Side: Sticky Editorial Header & Timeline */}
-        <div className="w-full lg:w-[48%] lg:sticky lg:top-32 lg:h-[calc(100vh-14rem)] flex flex-col justify-between py-2">
+        <div className="w-full lg:w-[48%] lg:sticky lg:top-32 lg:h-fit flex flex-col justify-between gap-12 py-2">
           <div>
             <motion.div 
               initial={{ opacity: 0, y: 15 }}

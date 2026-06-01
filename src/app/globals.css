@@ -13,7 +13,7 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --font-sans: var(--font-basic);
-  --font-serif: var(--font-cherry);
+  --font-serif: var(--font-basic);
 }
 
 body {
@@ -35,6 +35,7 @@ body {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -44,6 +45,7 @@ body {
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0%);
   }
@@ -58,4 +60,13 @@ body {
   -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
 }
 
-
+/* Hide scrollbar on mobile views for a clean native-app feel */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
