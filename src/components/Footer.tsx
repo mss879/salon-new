@@ -112,8 +112,27 @@ export default function Footer() {
       </div>
  
       {/* Subfooter */}
-      <div className="w-full max-w-7xl pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-foreground/40 text-[0.8rem] tracking-wider font-light">
-        <p>© {currentYear} LAVENDRA BEAUTY LOUNGE. ALL RIGHTS RESERVED.</p>
+      <div className="w-full max-w-7xl pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-foreground/40 text-[0.8rem] tracking-wider font-light">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <p>© {currentYear} LAVENDRA BEAUTY LOUNGE. ALL RIGHTS RESERVED.</p>
+          <div className="flex items-center gap-1.5 text-foreground/30">
+            <span>BUILT AND DESIGNED BY</span>
+            <Link 
+              href="https://www.arcai.agency" 
+              target="_blank" 
+              className="flex items-center gap-1 text-foreground/40 hover:text-primary font-medium transition-colors duration-300 ml-0.5"
+            >
+              <Image 
+                src="/arc-logo.webp" 
+                alt="ARC AI Agency Logo" 
+                width={16} 
+                height={16} 
+                className="opacity-45 hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="font-semibold tracking-[0.1em]">ARC AI AGENCY</span>
+            </Link>
+          </div>
+        </div>
         <div className="flex gap-6">
           <Link href="/privacy" className="hover:text-primary transition-colors duration-300">PRIVACY POLICY</Link>
           <Link href="/terms" className="hover:text-primary transition-colors duration-300">TERMS OF SERVICE</Link>
