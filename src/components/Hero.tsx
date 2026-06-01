@@ -31,7 +31,7 @@ export default function Hero({ startAnimation = true }: { startAnimation?: boole
         
         {/* Left Content (Text and CTA) */}
         <div className="flex flex-col w-full max-w-2xl lg:max-w-[45rem] order-1 lg:order-1 items-center lg:items-start text-center lg:text-left">
-          <h1 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] sm:leading-[1.05] tracking-tight text-primary mb-6">
+          <h1 className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] sm:leading-[1.05] tracking-tight text-primary mb-6">
             <span className="block sm:inline sm:whitespace-nowrap">Discover your beauty</span><br className="hidden sm:inline" />
             <span className="block sm:inline sm:whitespace-nowrap">potential with us.</span>
           </h1>
