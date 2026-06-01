@@ -120,15 +120,17 @@ export default function Footer() {
             <Link 
               href="https://www.arcai.agency" 
               target="_blank" 
+              rel="noopener"
               title="ARC AI Agency - Web Design, Development, and AI Solutions"
-              className="flex items-center ml-1"
+              className="flex items-center gap-2 ml-1 hover:text-primary transition-colors duration-300"
             >
+              <span className="font-semibold text-foreground/50 hover:text-primary transition-colors duration-300">ARC AI AGENCY</span>
               <Image 
                 src="/arc-logo.webp" 
-                alt="Built and Designed by ARC AI Agency" 
+                alt="ARC AI Agency Logo" 
                 width={65} 
                 height={65} 
-                className="h-auto w-[65px]"
+                className="h-auto w-[65px] opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </Link>
           </div>
