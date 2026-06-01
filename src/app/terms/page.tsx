@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Service | Lavendra Beauty Lounge",
   description: "Terms of Service for Lavendra Beauty Lounge. Review our booking, cancellation, safety, and operational lounge policies to ensure a seamless luxury experience.",
   alternates: {
-    canonical: "https://lavendrabeautylounge.com/terms",
+    canonical: "https://www.lavendrabeauty.lk/terms",
   },
 };
 
@@ -141,7 +141,7 @@ export default function TermsPage() {
               <strong>Lavendra Beauty Lounge</strong><br />
               No. 59/1, Keppetipola Mawatha, Kolonnawa, Sri Lanka<br />
               Tel / WhatsApp: +94 775 201 201<br />
-              Email: guestrelations@lavendrabeautylounge.com
+              Email: guestrelations@lavendrabeauty.lk
             </p>
           </section>
 

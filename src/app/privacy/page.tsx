@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Lavendra Beauty Lounge",
   description: "Privacy Policy for Lavendra Beauty Lounge. Learn how we collect, protect, and handle your information in accordance with our luxury service standards.",
   alternates: {
-    canonical: "https://lavendrabeautylounge.com/privacy",
+    canonical: "https://www.lavendrabeauty.lk/privacy",
   },
 };
 
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
               <strong>Lavendra Beauty Lounge</strong><br />
               No. 59/1, Keppetipola Mawatha, Kolonnawa, Sri Lanka<br />
               Tel / WhatsApp: +94 775 201 201<br />
-              Email: privacy@lavendrabeautylounge.com
+              Email: privacy@lavendrabeauty.lk
             </p>
           </section>
 

@@ -16,18 +16,18 @@ export const metadata: Metadata = {
     template: "%s | Lavendra Beauty Lounge",
   },
   description: "Experience bespoke beauty transformations and luxurious organic care at Lavendra Beauty Lounge, Colombo's ISO 9001:2015 certified luxury unisex salon.",
-  metadataBase: new URL("https://lavendrabeautylounge.com"),
+  metadataBase: new URL("https://www.lavendrabeauty.lk"),
   alternates: {
     canonical: "./",
   },
   openGraph: {
     title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
     description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
-    url: "https://lavendrabeautylounge.com",
+    url: "https://www.lavendrabeauty.lk",
     siteName: "Lavendra Beauty Lounge",
     images: [
       {
-        url: "/images/og-share.jpg",
+        url: "https://www.lavendrabeauty.lk/images/og-share.jpg",
         width: 1200,
         height: 630,
         alt: "Lavendra Beauty Lounge - Luxury Unisex Salon & Spa Stations",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
     description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
-    images: ["/images/og-share.jpg"],
+    images: ["https://www.lavendrabeauty.lk/images/og-share.jpg"],
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   "name": "Lavendra Beauty Lounge",
-  "image": "https://lavendrabeautylounge.com/logo.webp",
-  "@id": "https://lavendrabeautylounge.com/#salon",
-  "url": "https://lavendrabeautylounge.com",
+  "image": "https://www.lavendrabeauty.lk/logo.webp",
+  "@id": "https://www.lavendrabeauty.lk/#salon",
+  "url": "https://www.lavendrabeauty.lk",
   "telephone": "+94775201201",
   "priceRange": "$$",
   "address": {

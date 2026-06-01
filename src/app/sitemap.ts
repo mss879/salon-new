@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://lavendrabeautylounge.com";
+  const baseUrl = "https://www.lavendrabeauty.lk";
   
   const routes = ["", "/about", "/services", "/contact", "/appointment"];
   

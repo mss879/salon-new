@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/", "/static/"],
     },
-    sitemap: "https://lavendrabeautylounge.com/sitemap.xml",
+    sitemap: "https://www.lavendrabeauty.lk/sitemap.xml",
   };
 }
