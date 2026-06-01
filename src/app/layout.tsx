@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     siteName: "Lavendra Beauty Lounge",
     images: [
       {
-        url: "/logo.webp",
-        width: 800,
-        height: 600,
-        alt: "Lavendra Beauty Lounge Logo",
+        url: "/images/og-share.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Lavendra Beauty Lounge - Luxury Unisex Salon & Spa Stations",
       },
     ],
     locale: "en_US",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
     description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
-    images: ["/logo.webp"],
+    images: ["/images/og-share.jpg"],
   },
   robots: {
     index: true,
@@ -54,9 +54,17 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/logo.webp",
-    apple: "/logo.webp",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icons/icon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icons/icon-144x144.png", sizes: "144x144", type: "image/png" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
