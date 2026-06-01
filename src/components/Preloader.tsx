@@ -13,7 +13,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const words = ["HAIR ARTISTRY", "NAIL CARE", "SKIN THERAPY", "WELLNESS"];
 
   useEffect(() => {
-    // Cycle through words
+    // Cycle through words rapidly to fit a 2-second total load time
     const wordInterval = setInterval(() => {
       setCurrentWordIndex((prev) => {
         if (prev < words.length - 1) {
@@ -28,11 +28,11 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             setTimeout(() => {
               onComplete();
             }, 800);
-          }, 1000);
+          }, 300);
           return prev;
         }
       });
-    }, 850);
+    }, 300);
 
     return () => {
       clearInterval(wordInterval);
@@ -47,7 +47,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           exit={{ 
             opacity: 0, 
             y: "-100%",
-            transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } 
+            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
           }}
           className="fixed inset-0 z-[9999] bg-[#fdf8f3] flex flex-col items-center justify-center overflow-hidden select-none"
         >
@@ -153,7 +153,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               <motion.div
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: (words.length * 0.85) + 1.0, ease: "linear" }}
+                transition={{ duration: 1.2, ease: "linear" }}
                 className="absolute h-full bg-primary"
               />
             </div>
