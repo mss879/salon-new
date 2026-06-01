@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.lavendrabeauty.lk/images/og-share.jpg",
-        width: 1200,
-        height: 630,
+        width: 1024,
+        height: 536,
         alt: "Lavendra Beauty Lounge - Luxury Unisex Salon & Spa Stations",
       },
     ],
