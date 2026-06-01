@@ -18,7 +18,7 @@ export default function Footer() {
     { name: "About Lavendra", href: "/about" },
     { name: "Our Services Menu", href: "/services" },
     { name: "Contact & Location", href: "/contact" },
-    { name: "Book Consultations", href: "https://wa.me/94777123456" },
+    { name: "Book Consultations", href: "https://wa.me/94775201201" },
   ];
  
   return (
@@ -54,10 +54,10 @@ export default function Footer() {
           </div>
         </div>
  
-        {/* Column 2: Service Rituals */}
+        {/* Column 2: Service Offerings */}
         <div className="flex flex-col">
           <h4 className="font-serif text-sm text-primary font-bold tracking-[0.15em] mb-6 uppercase">
-            SERVICE RITUALS
+            SERVICES
           </h4>
           <ul className="flex flex-col gap-4">
             {serviceCategories.map((item, idx) => (
@@ -101,11 +101,11 @@ export default function Footer() {
             Address
           </p>
           <p className="text-foreground/60 text-[0.9rem] font-light leading-relaxed mb-4">
-            No. 123, W.A. Silva Mawatha,<br />Colombo 00600, Sri Lanka
+            No. 59/1, Keppetipola Mawatha,<br />Kolonnawa, Sri Lanka
           </p>
           <p className="text-foreground/60 text-[0.9rem] font-light">
-            Tel: +94 11 234 5678 <br />
-            WhatsApp: +94 77 712 3456
+            Tel: 0775 201 201 <br />
+            WhatsApp: 0775 201 201
           </p>
         </div>
  

@@ -349,7 +349,7 @@ export default function ServicesPage() {
                 className="font-serif text-5xl sm:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-8"
               >
                 Bespoke Beauty <br />
-                <span className="italic text-[#e6c8a2] font-light">Rituals & Menu</span>
+                <span className="italic text-[#e6c8a2] font-light">Services & Menu</span>
               </motion.h1>
               
               <motion.p 
@@ -467,7 +467,7 @@ export default function ServicesPage() {
                 }`}
               >
                 <span className="text-[0.7rem] sm:text-[0.75rem] uppercase tracking-wider">
-                  Show All Rituals
+                  Show All Services
                 </span>
               </button>
 
@@ -500,7 +500,7 @@ export default function ServicesPage() {
             <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pb-6 border-b border-foreground/10 mb-12">
               <div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-foreground">
-                  {selectedCategory === "all" ? "All Treatment Rituals" : SERVICE_CATALOG.find(c => c.id === selectedCategory)?.title}
+                  {selectedCategory === "all" ? "All Treatment Services" : SERVICE_CATALOG.find(c => c.id === selectedCategory)?.title}
                 </h3>
                 <p className="text-xs text-foreground/45 mt-1 font-mono uppercase tracking-wider">
                   {selectedCategory === "all" ? "Showing all salon categories" : "Showing active category"}

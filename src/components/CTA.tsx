@@ -51,7 +51,7 @@ export default function CTA() {
             className="w-full lg:w-[40%] flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 items-center justify-center lg:justify-end"
           >
             <Link 
-              href="https://wa.me/94777123456" 
+              href="https://wa.me/94775201201" 
               target="_blank"
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-primary font-bold text-center uppercase tracking-widest text-[0.75rem] shadow-lg hover:bg-white/95 hover:scale-[1.03] transition-all duration-300 border border-white"
             >

@@ -7,7 +7,7 @@ import CTA from "@/components/CTA";
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [formState, setFormState] = useState({ name: "", email: "", phone: "", message: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const faqs = [
@@ -21,7 +21,7 @@ export default function ContactPage() {
     },
     {
       q: "Do you offer services for weddings and private events?",
-      a: "Yes, we specialize in bespoke bridal styling, groom packages, and private VIP events. Please contact our events concierge at least 4-6 weeks in advance to customize your ritual."
+      a: "Yes, we specialize in bespoke bridal styling, groom packages, and private VIP events. Please contact our events concierge at least 4-6 weeks in advance to customize your package."
     },
     {
       q: "Are your treatments suitable for sensitive skin?",
@@ -35,11 +35,27 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const messageText = `Hello Lavendra Beauty Lounge,
+
+I would like to get in touch with you. Here are my details:
+
+Name: ${formState.name}
+Email: ${formState.email}
+Phone: ${formState.phone}
+${formState.service ? `Selected Service: ${formState.service}\n` : ""}
+Message:
+${formState.message}`;
+
+    const whatsappUrl = `https://wa.me/94775201201?text=${encodeURIComponent(messageText)}`;
+    
+    window.open(whatsappUrl, "_blank");
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormState({ name: "", email: "", phone: "", message: "" });
-    }, 3000);
+      setFormState({ name: "", email: "", phone: "", service: "", message: "" });
+    }, 4000);
   };
 
   return (
@@ -86,7 +102,7 @@ export default function ContactPage() {
                       target="_blank"
                       className="text-foreground/80 font-serif text-lg lg:text-xl leading-relaxed hover:text-primary transition-colors"
                     >
-                      No. 123, W.A. Silva Mawatha,<br />Colombo 00600, Sri Lanka
+                      No. 59/1, Keppetipola Mawatha,<br />Kolonnawa, Sri Lanka
                     </Link>
                   </div>
                 </div>
@@ -100,11 +116,11 @@ export default function ContactPage() {
                   </div>
                   <div className="flex flex-col">
                     <span className="uppercase text-[0.65rem] font-bold tracking-[0.2em] text-primary mb-1.5">TELEPHONE</span>
-                    <Link href="tel:+94112345678" className="text-foreground/80 font-serif text-lg lg:text-xl hover:text-primary transition-colors">
-                      +94 11 234 5678
+                    <Link href="tel:+94775201201" className="text-foreground/80 font-serif text-lg lg:text-xl hover:text-primary transition-colors">
+                      0775 201 201
                     </Link>
-                    <Link href="https://wa.me/94777123456" target="_blank" className="text-primary font-mono text-sm tracking-wider font-semibold mt-1 hover:underline">
-                      WhatsApp Chat: +94 77 712 3456
+                    <Link href="https://wa.me/94775201201" target="_blank" className="text-primary font-mono text-sm tracking-wider font-semibold mt-1 hover:underline">
+                      WhatsApp Chat: 0775 201 201
                     </Link>
                   </div>
                 </div>
@@ -171,6 +187,83 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                 <div className="flex flex-col gap-2 mt-2">
+                  <label className="uppercase text-[0.65rem] font-bold tracking-[0.2em] text-foreground/50 ml-2">SELECT SERVICE (OPTIONAL)</label>
+                  <select 
+                    value={formState.service}
+                    onChange={(e) => setFormState({ ...formState, service: e.target.value })}
+                    className="w-full bg-transparent border-b border-foreground/20 px-2 py-2.5 text-foreground font-light focus:outline-none focus:border-primary transition-all duration-300 cursor-pointer"
+                  >
+                    <option value="" className="text-foreground bg-background">Select a service...</option>
+                    <optgroup label="Waxing" className="text-foreground bg-background font-semibold">
+                      <option value="Full Legs Wax" className="font-light">Full Legs Wax</option>
+                      <option value="Half Legs Wax" className="font-light">Half Legs Wax</option>
+                      <option value="Full Arms Wax" className="font-light">Full Arms Wax</option>
+                      <option value="Underarms Wax" className="font-light">Underarms Wax</option>
+                      <option value="Full Face Wax" className="font-light">Full Face Wax</option>
+                    </optgroup>
+                    <optgroup label="Scrub Treatments" className="text-foreground bg-background font-semibold">
+                      <option value="Esthemax Full Body Scrub" className="font-light">Esthemax Full Body Scrub</option>
+                      <option value="Full Legs Scrub & Mask" className="font-light">Full Legs Scrub & Mask</option>
+                      <option value="Full Arms Scrub & Mask" className="font-light">Full Arms Scrub & Mask</option>
+                    </optgroup>
+                    <optgroup label="Face Threading" className="text-foreground bg-background font-semibold">
+                      <option value="Full Face Threading" className="font-light">Full Face Threading</option>
+                      <option value="Eyebrows Shaping & Threading" className="font-light">Eyebrows Shaping & Threading</option>
+                      <option value="Chin & Upper Lip Threading" className="font-light">Chin & Upper Lip Threading</option>
+                    </optgroup>
+                    <optgroup label="Massage & Wellness" className="text-foreground bg-background font-semibold">
+                      <option value="Full Body Massage" className="font-light">Full Body Massage</option>
+                      <option value="Deep Tissue Massage" className="font-light">Deep Tissue Massage</option>
+                      <option value="Back Massage" className="font-light">Back Massage</option>
+                      <option value="Feet Massage" className="font-light">Feet Massage</option>
+                      <option value="Head Massage" className="font-light">Head Massage</option>
+                    </optgroup>
+                    <optgroup label="Premium Facials & Skincare" className="text-foreground bg-background font-semibold">
+                      <option value="Korean Glass Skin Hydra Facial" className="font-light">Korean Glass Skin Hydra Facial</option>
+                      <option value="High Whitening Hydra Facial" className="font-light">High Whitening Hydra Facial</option>
+                      <option value="Gold Gel Facial" className="font-light">Gold Gel Facial</option>
+                      <option value="Collagen Gel Facial" className="font-light">Collagen Gel Facial</option>
+                      <option value="Vitamin C Facial" className="font-light">Vitamin C Facial</option>
+                      <option value="Seaweed Facial" className="font-light">Seaweed Facial</option>
+                      <option value="Diamond Microdermabrasion" className="font-light">Diamond Microdermabrasion</option>
+                    </optgroup>
+                    <optgroup label="Cleanup Treatments" className="text-foreground bg-background font-semibold">
+                      <option value="Normal Cleanup" className="font-light">Normal Cleanup</option>
+                      <option value="Gold Cleanup" className="font-light">Gold Cleanup</option>
+                      <option value="Collagen Cleanup" className="font-light">Collagen Cleanup</option>
+                      <option value="Vampire Cleanup" className="font-light">Vampire Cleanup</option>
+                    </optgroup>
+                    <optgroup label="Manicure & Pedicure" className="text-foreground bg-background font-semibold">
+                      <option value="Classic Manicure" className="font-light">Classic Manicure</option>
+                      <option value="Normal Pedicure" className="font-light">Normal Pedicure</option>
+                      <option value="Luxury Pedicure" className="font-light">Luxury Pedicure</option>
+                    </optgroup>
+                    <optgroup label="Lash Extensions" className="text-foreground bg-background font-semibold">
+                      <option value="Lash Extension Set" className="font-light">Lash Extension Set</option>
+                    </optgroup>
+                    <optgroup label="Haircuts & Styling" className="text-foreground bg-background font-semibold">
+                      <option value="Layers Cut" className="font-light">Layers Cut</option>
+                      <option value="Feather Cut" className="font-light">Feather Cut</option>
+                      <option value="Butterfly Cut" className="font-light">Butterfly Cut</option>
+                      <option value="Baby Haircut" className="font-light">Baby Haircut</option>
+                    </optgroup>
+                    <optgroup label="Dressing Packages" className="text-foreground bg-background font-semibold">
+                      <option value="Normal Makeup and Hairstyle" className="font-light">Normal Makeup and Hairstyle</option>
+                      <option value="Normal Makeup + Hairstyle + Saree Draping" className="font-light">Normal Makeup + Hairstyle + Saree Draping</option>
+                      <option value="Advanced Shimmer Makeup + Hairstyle" className="font-light">Advanced Shimmer Makeup + Hairstyle</option>
+                      <option value="Advanced Shimmer Makeup + Hairstyle + Saree Draping" className="font-light">Advanced Shimmer Makeup + Hairstyle + Saree Draping</option>
+                    </optgroup>
+                    <optgroup label="Bridal Packages" className="text-foreground bg-background font-semibold">
+                      <option value="Platinum Bridal Package (1 Function)" className="font-light">Platinum Bridal Package (1 Function)</option>
+                      <option value="Platinum Bridal Package (2 Functions)" className="font-light">Platinum Bridal Package (2 Functions)</option>
+                      <option value="HD Bridal Package (1 Function)" className="font-light">HD Bridal Package (1 Function)</option>
+                      <option value="HD Bridal Package (2 Functions)" className="font-light">HD Bridal Package (2 Functions)</option>
+                      <option value="Signature Bridal Package (Chief Artist)" className="font-light">Signature Bridal Package (Chief Artist)</option>
+                    </optgroup>
+                  </select>
+                </div>
+
                 <div className="flex flex-col gap-2 mt-2">
                   <label className="uppercase text-[0.65rem] font-bold tracking-[0.2em] text-foreground/50 ml-2">MESSAGE</label>
                   <textarea 
@@ -186,9 +279,12 @@ export default function ContactPage() {
                 <div className="relative mt-6">
                   <button 
                     type="submit" 
-                    className="w-full sm:w-auto px-10 py-4 rounded-full bg-primary text-white font-bold text-center uppercase tracking-widest text-[0.75rem] shadow-lg hover:bg-primary-hover hover:scale-[1.03] transition-all duration-300 border border-primary"
+                    className="w-full sm:w-auto px-10 py-4 rounded-full bg-primary text-white font-bold text-center uppercase tracking-widest text-[0.75rem] shadow-lg hover:bg-primary-hover hover:scale-[1.03] transition-all duration-300 border border-primary flex items-center justify-center gap-2"
                   >
-                    SEND MESSAGE
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 448 512">
+                      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.8 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                    </svg>
+                    SEND ON WHATSAPP
                   </button>
 
                   <AnimatePresence>
@@ -205,8 +301,8 @@ export default function ContactPage() {
                               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
                           </div>
-                          <span className="font-serif text-lg text-foreground font-medium">Thank You!</span>
-                          <span className="text-foreground/60 text-xs mt-1">Our concierge team will respond shortly.</span>
+                          <span className="font-serif text-lg text-foreground font-medium">Opening WhatsApp...</span>
+                          <span className="text-foreground/60 text-xs mt-1">Please send the pre-filled message to our concierge.</span>
                         </div>
                       </motion.div>
                     )}
