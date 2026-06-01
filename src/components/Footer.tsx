@@ -125,9 +125,9 @@ export default function Footer() {
               <Image 
                 src="/arc-logo.webp" 
                 alt="ARC AI Agency Logo" 
-                width={40} 
-                height={40} 
-                className="opacity-50 hover:opacity-100 transition-opacity duration-300 h-auto w-[40px]"
+                width={90} 
+                height={90} 
+                className="h-auto w-[90px]"
               />
             </Link>
           </div>
