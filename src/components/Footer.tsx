@@ -115,16 +115,18 @@ export default function Footer() {
       <div className="w-full max-w-7xl pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-foreground/40 text-[0.8rem] tracking-wider font-light">
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <p>© {currentYear} LAVENDRA BEAUTY LOUNGE. ALL RIGHTS RESERVED.</p>
-          <div className="flex items-center gap-2 text-foreground/30">
+          <div className="flex items-center gap-1.5 text-foreground/30">
             <span>BUILT AND DESIGNED BY</span>
             <Link 
               href="https://www.arcai.agency" 
               target="_blank" 
-              className="flex items-center ml-0.5"
+              rel="noopener"
+              title="ARC AI Agency - Web Design, Development, and AI Solutions"
+              className="flex items-center ml-1"
             >
               <Image 
                 src="/arc-logo.webp" 
-                alt="ARC AI Agency Logo" 
+                alt="Built and Designed by ARC AI Agency" 
                 width={65} 
                 height={65} 
                 className="h-auto w-[65px]"
