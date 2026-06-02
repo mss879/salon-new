@@ -338,7 +338,7 @@ export default function ServicesClient() {
               >
                 <div className="h-[1px] w-8 bg-[#e6c8a2]" />
                 <span className="uppercase tracking-[0.3em] text-[0.65rem] font-bold text-[#e6c8a2]">
-                  EST. COLOMBO 6 &bull; SRI LANKA
+                  EST. KOLONNAWA &bull; SRI LANKA
                 </span>
               </motion.div>
               

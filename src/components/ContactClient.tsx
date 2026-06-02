@@ -29,7 +29,7 @@ export default function ContactClient() {
     },
     {
       q: "Is there parking available at the lounge?",
-      a: "Yes, we have secure, dedicated customer parking located right at our lounge entrance in Colombo 6 for your convenience."
+      a: "Yes, we have secure, dedicated customer parking located right at our lounge entrance in Kolonnawa for your convenience."
     }
   ];
 

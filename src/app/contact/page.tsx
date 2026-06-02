@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact & Location | Lavendra Beauty Lounge Colombo",
-  description: "Get in touch with Lavendra Beauty Lounge, Colombo's premier luxury unisex beauty sanctuary. Find our address in Colombo 6, call our concierge, chat via WhatsApp, or read our FAQs.",
+  description: "Get in touch with Lavendra Beauty Lounge, Colombo's premier luxury unisex beauty sanctuary. Find our address in Kolonnawa, call our concierge, chat via WhatsApp, or read our FAQs.",
   alternates: {
     canonical: "https://www.lavendrabeauty.lk/contact",
   },

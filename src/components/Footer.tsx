@@ -38,7 +38,7 @@ export default function Footer() {
             />
           </Link>
           <p className="text-foreground/60 text-[0.95rem] font-light leading-relaxed mb-8 max-w-sm">
-            Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in the heart of Colombo 6.
+            Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in the heart of Kolonnawa.
           </p>
           {/* Social Icons */}
           <div className="flex gap-4">

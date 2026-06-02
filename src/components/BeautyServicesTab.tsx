@@ -13,7 +13,7 @@ export default function BeautyServicesTab() {
   const tabs = [
     {
       title: "Our Heritage",
-      desc: "Located in the suburbs of Colombo 6, we are the city's most prestigious one-stop unisex salon. With years of expertise, we represent a commitment to true beauty transformations and a warm, welcoming signature experience.",
+      desc: "Located in Kolonnawa, we are the region's most prestigious one-stop unisex salon. With years of expertise, we represent a commitment to true beauty transformations and a warm, welcoming signature experience.",
       img: "/images/heritage_pillar.webp",
     },
     {

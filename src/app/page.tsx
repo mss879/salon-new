@@ -2,13 +2,13 @@ import HomeClient from "@/components/HomeClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo 6",
+  title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
   description: "Discover your beauty potential at Lavendra Beauty Lounge, Colombo's premier unisex salon. Offering ISO 9001:2015 certified hair styling, advanced facials, luxury waxing, massage wellness, and master bridal packages.",
   alternates: {
     canonical: "https://www.lavendrabeauty.lk",
   },
   openGraph: {
-    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo 6",
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
     description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
     url: "https://www.lavendrabeauty.lk",
     siteName: "Lavendra Beauty Lounge",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo 6",
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
     description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
     images: ["https://www.lavendrabeauty.lk/images/og-share.jpg"],
   },
