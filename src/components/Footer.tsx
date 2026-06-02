@@ -48,7 +48,7 @@ export default function Footer() {
             <Link href="https://www.facebook.com/share/1ATG5VerKF/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </Link>
-            <Link href="https://tiktok.com" target="_blank" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
+            <Link href="https://www.tiktok.com/@lavendra.beauty.lounge?_r=1&_t=ZS-96roySHN5Xe" target="_blank" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.99-1.72-.08-.07-.17-.14-.24-.22v6.23c.04 3.75-2.22 7.37-5.88 8.44-3.97 1.3-8.61-.92-9.84-4.88C1.29 13.78 3.16 8.84 7.23 7.63c1.17-.37 2.42-.4 3.61-.09v4.11c-.81-.25-1.7-.22-2.47.19-1.22.61-1.92 2.01-1.74 3.37.21 1.48 1.49 2.64 2.99 2.64 1.75.05 3.25-1.32 3.31-3.07V.02z"/></svg>
             </Link>
           </div>
