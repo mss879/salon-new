@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 const basicFont = localFont({
   src: "../../public/Basic/Basic-Regular.ttf",
@@ -133,6 +134,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );
