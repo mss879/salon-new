@@ -12,17 +12,17 @@ const basicFont = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
+    default: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
     template: "%s | Lavendra Beauty Lounge",
   },
-  description: "Experience bespoke beauty transformations and luxurious organic care at Lavendra Beauty Lounge, Colombo's ISO 9001:2015 certified luxury unisex salon.",
+  description: "Experience bespoke beauty transformations and luxurious organic care at Lavendra Beauty Lounge, an ISO 9001:2015 certified luxury unisex salon in Kolonnawa.",
   metadataBase: new URL("https://www.lavendrabeauty.lk"),
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
-    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
+    description: "A premier unisex luxury salon in Kolonnawa, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
     url: "https://www.lavendrabeauty.lk",
     siteName: "Lavendra Beauty Lounge",
     images: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Colombo",
-    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
+    title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
+    description: "A premier unisex luxury salon in Kolonnawa, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
     images: ["https://www.lavendrabeauty.lk/images/og-share.jpg"],
   },
   robots: {

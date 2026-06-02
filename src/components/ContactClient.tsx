@@ -80,7 +80,7 @@ ${formState.message}`;
                 VISIT & REACH OUT
               </span>
               <h2 className="font-serif text-3xl lg:text-4xl leading-[1.2] tracking-tight mb-8 text-foreground font-semibold">
-                Our Sanctuary in Colombo
+                Our Sanctuary in Kolonnawa
               </h2>
               <p className="text-foreground/70 font-light text-[1rem] lg:text-[1.05rem] leading-relaxed mb-12 max-w-md">
                 Experience unparalleled care in a space designed entirely for your luxury and peace of mind. Drop in, call us, or send an email and let us customize your experience.

@@ -3,13 +3,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
-  description: "Discover your beauty potential at Lavendra Beauty Lounge, Colombo's premier unisex salon. Offering ISO 9001:2015 certified hair styling, advanced facials, luxury waxing, massage wellness, and master bridal packages.",
+  description: "Discover your true beauty potential at Lavendra Beauty Lounge. A premier luxury unisex salon in Kolonnawa offering elite hair care, advanced active facials, wellness massages, and master bridal styling.",
   alternates: {
     canonical: "https://www.lavendrabeauty.lk",
   },
   openGraph: {
     title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
-    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience in Sri Lanka.",
+    description: "Discover your true beauty potential at Lavendra Beauty Lounge. A premier luxury unisex salon in Kolonnawa offering elite hair care, advanced active facials, wellness massages, and master bridal styling.",
     url: "https://www.lavendrabeauty.lk",
     siteName: "Lavendra Beauty Lounge",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Lavendra Beauty Lounge | Luxury Unisex Salon in Kolonnawa",
-    description: "Colombo's premier unisex luxury salon, offering custom-crafted beauty transformations, ISO 9001:2015 certified treatments, and a serene therapeutic experience.",
+    description: "Discover your true beauty potential at Lavendra Beauty Lounge. A premier luxury unisex salon in Kolonnawa offering elite hair care, advanced active facials, wellness massages, and master bridal styling.",
     images: ["https://www.lavendrabeauty.lk/images/og-share.jpg"],
   },
 };

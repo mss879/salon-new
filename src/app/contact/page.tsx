@@ -2,14 +2,14 @@ import ContactClient from "@/components/ContactClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact & Location | Lavendra Beauty Lounge Colombo",
-  description: "Get in touch with Lavendra Beauty Lounge, Colombo's premier luxury unisex beauty sanctuary. Find our address in Kolonnawa, call our concierge, chat via WhatsApp, or read our FAQs.",
+  title: "Contact & Location | Lavendra Beauty Lounge",
+  description: "Get in touch with Lavendra Beauty Lounge, a premier luxury unisex beauty sanctuary. Find our address in Kolonnawa, call our concierge, chat via WhatsApp, or read our FAQs.",
   alternates: {
     canonical: "https://www.lavendrabeauty.lk/contact",
   },
   openGraph: {
-    title: "Contact & Location | Lavendra Beauty Lounge Colombo",
-    description: "Connect with our reservation concierge or visit our luxury unisex beauty lounge in Colombo. Safe parking, specialized consultations, and premium organic services.",
+    title: "Contact & Location | Lavendra Beauty Lounge",
+    description: "Connect with our reservation concierge or visit our luxury unisex beauty lounge in Kolonnawa. Safe parking, specialized consultations, and premium organic services.",
     url: "https://www.lavendrabeauty.lk/contact",
     siteName: "Lavendra Beauty Lounge",
     images: [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact & Location | Lavendra Beauty Lounge Colombo",
-    description: "Connect with our reservation concierge or visit our luxury unisex beauty lounge in Colombo.",
+    title: "Contact & Location | Lavendra Beauty Lounge",
+    description: "Connect with our reservation concierge or visit our luxury unisex beauty lounge in Kolonnawa.",
     images: ["https://www.lavendrabeauty.lk/images/contact_hero.webp"],
   },
 };
